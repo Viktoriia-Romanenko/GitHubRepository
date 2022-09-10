@@ -1,5 +1,6 @@
 function displayWeatherCondition(responce) {
   console.log(responce.data);
+
   document.querySelector("#current-city").innerHTML = responce.data.name;
   document.querySelector("#current-temperature").innerHTML = Math.round(
     responce.data.main.temp
@@ -11,7 +12,13 @@ function displayWeatherCondition(responce) {
     responce.data.wind.speed
   )}km/h`;
   document.querySelector("#description").innerHTML =
-    responce.data.weather[0].main;
+    responce.data.weather[0].description;
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `https://openweathermap.org/img/wn/${responce.data.weather[0].icon}@2x.png`
+    );
 }
 
 function searchCity(city) {

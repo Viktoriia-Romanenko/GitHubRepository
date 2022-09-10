@@ -38,10 +38,6 @@ img.responsive {
   height: auto;
 }
 
-div.row.search-components {
-  text-align: center;
-}
-
 .container {
   border: 2px solid rgb(164, 232, 246, 0.5);
   border-radius: 5px;
@@ -49,6 +45,7 @@ div.row.search-components {
   transition: all 200ms ease-in-out;
 }
 
+div.row.search-components,
 .week-container,
 .today-container,
 .precipitation-container,
@@ -114,4 +111,10 @@ div.row.search-components {
 }
 div.row.g-0 {
   padding: 50px;
+}
+
+.sourse-link {
+  font-size: 1vw;
+  font-weight: 400;
+  padding-left: 50px;
 }
