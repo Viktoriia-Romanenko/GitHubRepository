@@ -2,9 +2,10 @@ function displayWeatherCondition(responce) {
   console.log(responce.data);
 
   document.querySelector("#current-city").innerHTML = responce.data.name;
-  document.querySelector("#current-temperature").innerHTML = Math.round(
-    responce.data.main.temp
-  );
+
+  celsiusTemperature = responce.data.main.temp;
+  document.querySelector("#current-temperature").innerHTML =
+    Math.round(celsiusTemperature);
   document.querySelector(
     "#humidity"
   ).innerHTML = `Humidity: ${responce.data.main.humidity}%`;
@@ -103,6 +104,30 @@ function getCurrentLocation(event) {
 
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+// searchCity("London");
+// weekParameters();
+
+function displayFahrengheit(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#current-temperature");
+  let fahrenheit = Math.round((celsiusTemperature * 9) / 5 + 32);
+  temperature.innerHTML = fahrenheit;
+}
+
+let celsiusTemperature = null;
+
+let fahrenheightLink = document.querySelector("#farenheight");
+fahrenheightLink.addEventListener("click", displayFahrengheit);
+
+function displaycelsius(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#current-temperature");
+  temperature.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusLink = document.querySelector("#celcius");
+celsiusLink.addEventListener("click", displaycelsius);
 
 searchCity("London");
 weekParameters();
