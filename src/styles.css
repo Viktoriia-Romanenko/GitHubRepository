@@ -118,3 +118,7 @@ div.row.g-0 {
   font-weight: 400;
   padding-left: 50px;
 }
+.units a {
+  cursor: default;
+  text-decoration: none;
+}
