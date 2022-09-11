@@ -118,7 +118,16 @@ div.row.g-0 {
   font-weight: 400;
   padding-left: 50px;
 }
-.units a {
+
+.active-celsius {
+  color: hsl(0, 0%, 0%, 0.9);
+  text-decoration: none;
   cursor: default;
+}
+.active-celsius:hover {
+  color: hsl(0, 0%, 0%, 0.9);
+  text-decoration: none;
+}
+.active-fahrenheight {
   text-decoration: none;
 }

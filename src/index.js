@@ -105,12 +105,12 @@ function getCurrentLocation(event) {
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
-// searchCity("London");
-// weekParameters();
-
 function displayFahrengheit(event) {
   event.preventDefault();
   let temperature = document.querySelector("#current-temperature");
+  //remove the active class from the celsius link
+  celsiusLink.classList.remove("active-celsius");
+  fahrenheightLink.classList.add("active-celsius");
   let fahrenheit = Math.round((celsiusTemperature * 9) / 5 + 32);
   temperature.innerHTML = fahrenheit;
 }
@@ -123,6 +123,8 @@ fahrenheightLink.addEventListener("click", displayFahrengheit);
 function displaycelsius(event) {
   event.preventDefault();
   let temperature = document.querySelector("#current-temperature");
+  fahrenheightLink.classList.remove("active-celsius");
+  celsiusLink.classList.add("active-celsius");
   temperature.innerHTML = Math.round(celsiusTemperature);
 }
 
